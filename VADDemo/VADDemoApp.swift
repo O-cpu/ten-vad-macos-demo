@@ -1,14 +1,14 @@
 //
-//  TEN_VAD_TESTApp.swift
-//  TEN_VAD_TEST
+//  VADDemoApp.swift
+//  VADDemo
 //
-//  Created by Oiver Stuckert on 10.12.25.
+//  TEN VAD macOS Demo Application
 //
 
 import SwiftUI
 
 @main
-struct TEN_VAD_TESTApp: App {
+struct VADDemoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

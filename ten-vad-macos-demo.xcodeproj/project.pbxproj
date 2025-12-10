@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A7FAB4442EE9DA6100A7C722 /* TEN_VAD_TEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEN_VAD_TEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7FAB4442EE9DA6100A7C722 /* VADDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VADDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7FAB4602EE9DA6100A7C722 /* libten_vad.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libten_vad.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A7FAB4462EE9DA6100A7C722 /* TEN_VAD_TEST */ = {
+		A7FAB4462EE9DA6100A7C722 /* VADDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TEN_VAD_TEST;
+			path = VADDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +33,7 @@
 		A7FAB43B2EE9DA6100A7C722 = {
 			isa = PBXGroup;
 			children = (
-				A7FAB4462EE9DA6100A7C722 /* TEN_VAD_TEST */,
+				A7FAB4462EE9DA6100A7C722 /* VADDemo */,
 				A7FAB4452EE9DA6100A7C722 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +41,7 @@
 		A7FAB4452EE9DA6100A7C722 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7FAB4442EE9DA6100A7C722 /* TEN_VAD_TEST.app */,
+				A7FAB4442EE9DA6100A7C722 /* VADDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,26 +49,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A7FAB4432EE9DA6100A7C722 /* TEN_VAD_TEST */ = {
+		A7FAB4432EE9DA6100A7C722 /* VADDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7FAB4532EE9DA6400A7C722 /* Build configuration list for PBXNativeTarget "TEN_VAD_TEST" */;
+			buildConfigurationList = A7FAB4532EE9DA6400A7C722 /* Build configuration list for PBXNativeTarget "VADDemo" */;
 			buildPhases = (
 				A7FAB4402EE9DA6100A7C722 /* Sources */,
 				A7FAB4412EE9DA6100A7C722 /* Frameworks */,
 				A7FAB4422EE9DA6100A7C722 /* Resources */,
+				A7FAB4622EE9DA6100A7C722 /* Copy TEN VAD Library */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A7FAB4462EE9DA6100A7C722 /* TEN_VAD_TEST */,
+				A7FAB4462EE9DA6100A7C722 /* VADDemo */,
 			);
-			name = TEN_VAD_TEST;
+			name = VADDemo;
 			packageProductDependencies = (
 			);
-			productName = TEN_VAD_TEST;
-			productReference = A7FAB4442EE9DA6100A7C722 /* TEN_VAD_TEST.app */;
+			productName = VADDemo;
+			productReference = A7FAB4442EE9DA6100A7C722 /* VADDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +87,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A7FAB43F2EE9DA6100A7C722 /* Build configuration list for PBXProject "TEN_VAD_TEST" */;
+			buildConfigurationList = A7FAB43F2EE9DA6100A7C722 /* Build configuration list for PBXProject "ten-vad-macos-demo" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +101,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A7FAB4432EE9DA6100A7C722 /* TEN_VAD_TEST */,
+				A7FAB4432EE9DA6100A7C722 /* VADDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -113,6 +115,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A7FAB4612EE9DA6100A7C722 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7FAB4622EE9DA6100A7C722 /* Copy TEN VAD Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/VADDemo/ThirdParty/libten_vad.dylib",
+			);
+			name = "Copy TEN VAD Library";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/libten_vad.dylib",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\ncp \"${PROJECT_DIR}/VADDemo/ThirdParty/libten_vad.dylib\" \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\ncodesign --force --sign - \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libten_vad.dylib\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A7FAB4402EE9DA6100A7C722 /* Sources */ = {
@@ -162,7 +200,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -178,7 +216,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.8;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -225,7 +263,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -235,7 +273,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.8;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -248,22 +286,36 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TEN_VAD_TEST/TEN_VAD_TEST.entitlements;
+				CODE_SIGN_ENTITLEMENTS = VADDemo/VADDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TEN_VAD_TEST/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VADDemo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VADDemo/ThirdParty",
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VADDemo/ThirdParty",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Jerimy.TEN-VAD-TEST";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lten_vad",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.ten-vad-macos-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VADDemo/VADDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -273,22 +325,36 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TEN_VAD_TEST/TEN_VAD_TEST.entitlements;
+				CODE_SIGN_ENTITLEMENTS = VADDemo/VADDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TEN_VAD_TEST/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VADDemo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VADDemo/ThirdParty",
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VADDemo/ThirdParty",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Jerimy.TEN-VAD-TEST";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lten_vad",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.ten-vad-macos-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VADDemo/VADDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -296,7 +362,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A7FAB43F2EE9DA6100A7C722 /* Build configuration list for PBXProject "TEN_VAD_TEST" */ = {
+		A7FAB43F2EE9DA6100A7C722 /* Build configuration list for PBXProject "ten-vad-macos-demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7FAB4512EE9DA6400A7C722 /* Debug */,
@@ -305,7 +371,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A7FAB4532EE9DA6400A7C722 /* Build configuration list for PBXNativeTarget "TEN_VAD_TEST" */ = {
+		A7FAB4532EE9DA6400A7C722 /* Build configuration list for PBXNativeTarget "VADDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7FAB4542EE9DA6400A7C722 /* Debug */,
